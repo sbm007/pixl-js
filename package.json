@@ -1,6 +1,6 @@
 {
   "name": "pixl-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A visual regression based testing tool for web projects using Puppeteer and Chromium.",
   "main": "lib/index.js",
   "bin": "lib/cli.js",
