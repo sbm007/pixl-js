@@ -1,0 +1,17 @@
+{
+  "url": "https://www.gmail.com/",
+  "misMatchPercentage": 0,
+  "maxRunsToKeep": 5,
+  "maxWorkers": 8,
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440
+    },
+    {
+      "name": "mobile",
+      "width": 480
+    }
+  ],
+  "scenarios": "./feature.pup.js"
+}

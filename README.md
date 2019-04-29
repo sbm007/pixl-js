@@ -13,22 +13,18 @@
 
 ```
 {
-  "url": "http://www.google.com/",
+  "url": "https://www.gmail.com/",
   "misMatchPercentage": 0,
   "maxRunsToKeep": 5,
   "maxWorkers": 8,
   "viewports": [
     {
-      "name": "mobile",
-      "width": 320
-    },
-    {
-      "name": "tabletLandscape",
-      "width": 1024
-    },
-    {
       "name": "desktop",
       "width": 1440
+    },
+    {
+      "name": "mobile",
+      "width": 480
     }
   ],
   "scenarios": "./feature.pup.js"
@@ -38,24 +34,22 @@
 #### Sample `feature.pup.js` file
 
 ```
-const enterSearchQuery = (query) => async (page) => {
-  await page.type('input[name=q]', query);
+const enterEmail = (query) => async (page) => {
+  await page.type('input[type=email]', query);
 };
 
-const performSearch = (query) => async (page) => {
-  await Promise.all([
-    page.click('input[type=submit'),
-    page.waitForNavigation()
-  ]);
+const pressNext = async (page) => {
+  await page.click('#identifierNext');
+  await page.waitForResponse((response) => response.url().startsWith('https://accounts.google.com'));
 };
 
 module.exports = {
-  name: 'Google ',
+  name: 'Gmail login',
   steps: [
-    ['It should navigate to Google'],
-    ['It should enter some search query', enterSearchQuery('test query')],
-    ['It should perform a search', performSearch]
-  ]
+    ['It should navigate to Gmail'],
+    ['It should enter an email address', enterEmail('test@email.com')],
+    ['It should press Next', pressNext],
+  ],
 };
 ```
 
