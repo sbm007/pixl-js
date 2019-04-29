@@ -1,6 +1,11 @@
 # Pixl.js
 #### A visual regression based testing tool for web projects using Puppeteer and Chromium.
 
+- Easily integrated into existing dev workflow (such as a CI pipeline) by using public the API, or as a CLI tool
+- Multi viewport testing
+- A visual diff report is generated for each test run which explains failures (if any)
+- Features written using a BDD style
+
 ---
 
 ### Installation
@@ -72,3 +77,9 @@ For Puppeteer API usage, please refer to: https://github.com/GoogleChrome/puppet
   
 - To approve the last visual regression run: 
   - `pixl-js approve`
+
+
+### TODO
+
+ - Document public API (`/lib/engine.js`)
+ - Add Docker example
