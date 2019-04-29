@@ -5,9 +5,16 @@
 
 ### Installation
 
-1. `npm install --save-dev pixl-js`
+- If you would like to import this library and incorporate it into your dev workflow, then run:
+  - `npm install --save-dev pixl-js`
+  
+  
+- Otherwise you can install Pixl.js globally and use it as a CLI tool as follows:
+  - `npm install --global pixl-js`
 
-### Setup
+### Demo
+
+An example feature is available in the `demo/` folder.
 
 #### Sample `config.pixl-js.json`
 
@@ -55,7 +62,7 @@ module.exports = {
 
 ### API
 
-For Puppeteer API usage, please refer to: [https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md]
+For Puppeteer API usage, please refer to: https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md
 
 ### Usage
 - To execute a new visual regression run:
