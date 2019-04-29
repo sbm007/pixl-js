@@ -46,8 +46,9 @@ const enterEmail = (query) => async (page) => {
 };
 
 const pressNext = async (page) => {
-  await page.click('#identifierNext');
-  await page.waitForResponse((response) => response.url().startsWith('https://accounts.google.com'));
+  const emailInput = await page.$('input[type=email]');
+  await emailInput.press('Enter');
+  await page.waitForNavigation();
 };
 
 module.exports = {
